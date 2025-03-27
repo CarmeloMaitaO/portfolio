@@ -1,0 +1,39 @@
+article{
+	display: grid;
+	grid-template-columns: 12rem auto 12rem;
+	justify-content: space-between;
+	align-items: end;
+	column-gap: 1rem;
+}
+article img{
+	max-width: 100%;
+	max-height:100%;
+	min-width: auto;
+	min-height: auto;
+}
+.boton{
+	min-height: 3.37rem;
+	max-height: fit-content;
+	width: 12rem;
+	border-radius: 12px;
+	border: 2pt solid #EDE0D4;
+	font-size: 1.5rem;
+	color:  #EDE0D4;
+	background-color: #4D3F27;
+	transition-duration:0.4s;
+	font-family: "Mali";
+}
+.boton:hover{
+	background-color: #EDE0D4;
+	color: #4D3F27;
+}
+.botono{
+	display: none;
+}
+
+.divisito{
+	display: grid;
+	padding: 0;
+	margin: 0;
+	row-gap: 1rem;
+}

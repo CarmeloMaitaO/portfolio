@@ -1,0 +1,8 @@
+article{
+	display: grid;
+	align-content: center;
+	justify-content: center;
+}
+article img{
+	height: 16.25rem;
+}

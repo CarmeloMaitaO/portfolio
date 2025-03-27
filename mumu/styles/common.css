@@ -1,0 +1,41 @@
+@font-face{
+	font-family: "Mali";
+	src: url("../resources/fonts/Mali/Mali-Regular.ttf");
+}
+html{
+	font-family: "Mali";
+}
+body{
+	box-sizing: border-box;
+	background-image: url("../resources/img/hojas-mumu.svg");
+	background-size: cover;
+	background-color: #4D3F27;
+	margin: 0;
+	padding: 3.3rem 6rem 3.3rem 6rem;
+	height: 100vh;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 3.3rem auto 1.25rem;
+	align-content: space-between;
+}
+a{
+	text-decoration: none;
+}
+a:*{
+	text-decoration: none;
+}
+
+header{
+	height: 3.3rem;
+}
+header img{
+	height: 3.3rem;
+}
+footer{
+	height: 1.25rem;
+	text-align: right;
+}
+footer span{
+	font-size: 1.25rem;
+	color: #EDE0D4;
+}
