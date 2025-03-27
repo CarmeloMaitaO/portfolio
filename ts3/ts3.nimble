@@ -11,3 +11,6 @@ bin           = @["ts3"]
 # Dependencies
 
 requires "nim >= 2.2.2"
+requires "norm >= 2.8.7"
+requires "xl >= 1.1.0"
+requires "https://github.com/jerous86/nimqt#head"
