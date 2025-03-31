@@ -1,92 +1,14 @@
 {
   "version": 2,
   "packages": {
-    "ast_pattern_matching": {
-      "version": "1.0.0",
-      "vcsRevision": "eb8b99d595517fd5d41ccc954edb896267f2db78",
-      "url": "https://github.com/nim-lang/ast-pattern-matching",
+    "nimqml": {
+      "version": "0.9.2",
+      "vcsRevision": "105f5abe38570147cf95191416a24dfbb3f1055c",
+      "url": "https://github.com/filcuc/nimqml",
       "downloadMethod": "git",
       "dependencies": [],
       "checksums": {
-        "sha1": "e7d2f92c1a3390b4b2da00e021baf14b91ff5017"
-      }
-    },
-    "db_connector": {
-      "version": "0.1.0",
-      "vcsRevision": "74aef399e5c232f95c9fc5c987cebac846f09d62",
-      "url": "https://github.com/nim-lang/db_connector",
-      "downloadMethod": "git",
-      "dependencies": [],
-      "checksums": {
-        "sha1": "b20053975976f94afac253d67cc6ef9200b32d02"
-      }
-    },
-    "lowdb": {
-      "version": "0.2.1",
-      "vcsRevision": "937ebb84bf08d24b97b2a9b8c86c37cd39fab520",
-      "url": "https://github.com/PhilippMDoerner/lowdb",
-      "downloadMethod": "git",
-      "dependencies": [
-        "db_connector"
-      ],
-      "checksums": {
-        "sha1": "e26a392547b826d7d3e6566dc0fd76e9f42ead06"
-      }
-    },
-    "nim": {
-      "version": "2.2.2",
-      "vcsRevision": "",
-      "url": "https://github.com/nim-lang/Nim.git",
-      "downloadMethod": "git",
-      "dependencies": [],
-      "checksums": {
-        "sha1": "06c7c7d76a468e1f230648e9d1ea342671846d73"
-      }
-    },
-    "nimqt": {
-      "version": "0.2.1",
-      "vcsRevision": "53bc822b261b0b146cc8e1ad567c274f2a640398",
-      "url": "https://github.com/jerous86/nimqt",
-      "downloadMethod": "git",
-      "dependencies": [
-        "ast_pattern_matching"
-      ],
-      "checksums": {
-        "sha1": "921cf959635eb3cb5b9faa694ae55279e07b68f9"
-      }
-    },
-    "norm": {
-      "version": "2.8.7",
-      "vcsRevision": "aba796d0251fa6aeb01ec2c49f48b63522db5e32",
-      "url": "https://github.com/moigagoo/norm",
-      "downloadMethod": "git",
-      "dependencies": [
-        "lowdb"
-      ],
-      "checksums": {
-        "sha1": "cdf05aec89e0c4f7ed7adb3ee60a3a7dff1c802c"
-      }
-    },
-    "zippy": {
-      "version": "0.10.16",
-      "vcsRevision": "a99f6a7d8a8e3e0213b3cad0daf0ea974bf58e3f",
-      "url": "https://github.com/guzba/zippy",
-      "downloadMethod": "git",
-      "dependencies": [],
-      "checksums": {
-        "sha1": "da3bb5ea388f980babcc29760348e2899d29a639"
-      }
-    },
-    "xl": {
-      "version": "1.1.0",
-      "vcsRevision": "3f4a3ee50eff48e03502a6d3a5dc335ff9ba00b6",
-      "url": "https://github.com/khchen/xl",
-      "downloadMethod": "git",
-      "dependencies": [
-        "zippy"
-      ],
-      "checksums": {
-        "sha1": "033a1f9eaa4ba97afd3b14c2323e4ce32ec5f73d"
+        "sha1": "450bba491da37dd49d85335041f4f7f8d43def0f"
       }
     }
   },

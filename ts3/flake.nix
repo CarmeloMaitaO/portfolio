@@ -28,9 +28,7 @@
             nimble
             nph
             zig
-            libsForQt5.qt5.qtbase
-            libsForQt5.qt5.qttools
-            libsForQt5.qt5.qtwayland
+            libsForQt5.full
             sqlite
           ];
         };
