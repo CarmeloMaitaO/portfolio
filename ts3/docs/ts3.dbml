@@ -1,0 +1,98 @@
+Table Personas {
+	cedula integer [ pk, not null, unique, note: 'Cédula de identidad de la persona' ]
+	impre integer [ unique, note: 'Impre del abogado (en caso de serlo)' ]
+	nombres varchar [ not null, note: 'Nombres de la persona' ]
+	apellidos varchar [ not null, note: 'Apellidos de la persona' ]
+
+	Note: 'Tabla que contiene todas las personas del índice. Contiene tanto abogados como no abogados, siendo diferenciados por la posesión de impre'
+}
+
+Table Telefonos {
+	cedula integer [ pk, not null, unique, note: 'Cédula de la persona' ]
+	telefono integer [ pk, not null, unique, default: 584, note: 'Teléfono de la persona' ]
+
+	Note: 'Teléfonos de cada persona. Una persona puede tener varios teléfonos'
+}
+
+Table Correos {
+	cedula integer [ pk, not null, unique, note: 'Cédula de la persona' ]
+	correo varchar [ unique, note: 'Correo de la persona' ]
+
+	Note: 'Correos de cada persona. Una persona puede tener varios correos'
+}
+
+Table Partes {
+	cedula integer [ pk, not null, unique, note: 'Cedula de la persona' ]
+	numero integer [ pk, not null, note: 'Número del expediente' ]
+	parte integer [ pk, not null, note: 'Bitflag que representa qué rol desempeña la parte:
+
+0: demandado
+1: abogado del demandado
+2: demandante
+3: abogado del demandante' ]
+
+	Note: 'Partes de un expediente. Cada persona ('cedula') está vínculada a un 'numero' de expediente y cumple con un rol ("parte")'
+}
+
+Table Expedientes {
+	numero integer [ pk, not null, unique, note: 'Número del expediente' ]
+	auto date [ not null, note: 'Fecha de entrada del expediente' ]
+	tipo integer [ not null, note: 'Bitflag que indica el tipo de expediente:
+
+0: interlocutorias
+1: definitivas
+2: breve
+3: recusaciones' ]
+	motivo text [ not null, note: 'Motivo del expediente' ]
+	egreso date [ note: 'Fecha en la que sale el expediente según los datos de los días en los que se dió despacho y demás' ]
+
+	Note: 'Expedientes. Identificados por su número, poseen un "auto" (fecha de entrada), un "tipo" que define los lapsos procesales a los que se somete, un motivo (de la disputa) y una fecha de egreso una vez que se cumplan todos los lapsos procesales'
+}
+
+Table Origen {
+	nombre varchar [ pk, not null, note: 'Nombre del tribunal de origen' ]
+	numero integer [ pk, not null, note: 'Número del expediente' ]
+
+	Note: 'Tribunal que origina el expediente'
+}
+
+Table Tribunales {
+	nombre varchar [ pk, not null, unique, note: 'Nombre del tribunal' ]
+
+	Note: 'Tribunales conocidos'
+}
+
+Table Dias {
+	dia date [ pk, not null, unique, note: 'Día que se está registrando' ]
+	tipo integer [ pk, not null, note: 'Bitflag que indica qué tipo de día fue:
+
+- 0: laboral con despacho
+- 1: laboral sin despacho
+- 2: no laboral
+- 3: feriado
+- 4: receso judicial' ]
+}
+
+Ref fk_Personas_cedula_Teléfonos {
+	Personas.cedula < Telefonos.cedula [ delete: cascade, update: cascade ]
+}
+
+Ref fk_Personas_cedula_Correos {
+	Personas.cedula < Correos.cedula [ delete: cascade, update: cascade ]
+}
+
+Ref fk_Personas_cedula_Partes {
+	Personas.cedula < Partes.cedula [ delete: cascade, update: cascade ]
+}
+
+Ref fk_Expedientes_numero_Partes {
+	Expedientes.numero < Partes.numero [ delete: cascade, update: cascade ]
+}
+
+Ref fk_Expedientes_numero_origen {
+	Expedientes.numero - Origen.numero [ delete: cascade, update: cascade ]
+}
+
+Ref fk_Tribunales_nombre_origen {
+	Tribunales.nombre - Origen.nombre [ delete: cascade, update: cascade ]
+}
